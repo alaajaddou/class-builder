@@ -1,34 +1,35 @@
 /**
- * @abstract Creates a dynamic instance of a dynamically created attribute set.
- * 
- * @author Alaa M. Jaddou
+ * @description Creates a dynamic class signature.
  *
+ * @author Alaa M. Jaddou
+ * @since June 2021
  * @see https://github.com/alaajaddou/class-builder
  */
 class Entity {
-	private _template;
-	private _entity_id;
-	
 	constructor(data) {
 		Object.keys(data).forEach(key => {
 			this.set(key, data[key]);
 		});
 	}
-	
-	get entity_id() {
-		return this._entity_id;
-	}
-	
-	set entity_id(entity_id) {
-		this._entity_id = entity_id;		
-	}
-	
+
+	private _template;
+
 	get template() {
 		return this._template;
 	}
-	
+
 	set template(template) {
-		this._template = template;		
+		this._template = template;
+	}
+
+	private _entity_id;
+
+	get entity_id() {
+		return this._entity_id;
+	}
+
+	set entity_id(entity_id) {
+		this._entity_id = entity_id;
 	}
 
 	get(field: string) {
